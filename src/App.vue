@@ -31,12 +31,16 @@ const addTodo = () => {
     return;
   }
 
+  let date = new Date();
+  let today = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
   todos.value.push({
     content: input_content.value,
     done: false,
     editable: false,
-    createdAt: new Date().getTime(),
+    createdAt: today,
   });
+
+  input_content.value = "";
 };
 
 const removeTodo = (todo) => {
@@ -84,15 +88,12 @@ onMounted(() => {
         >
           <label>
             <input type="checkbox" v-model="todo.done" />
-            <span
-              :class="`bubble ${
-                todo.category == 'business' ? 'business' : 'personal'
-              }`"
-            ></span>
+            <span class="bubble"></span>
           </label>
 
           <div class="todo-content">
             <input type="text" v-model="todo.content" />
+            <div class="date">{{ todo.createdAt }}</div>
           </div>
 
           <div class="actions">
