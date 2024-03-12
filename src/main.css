@@ -233,3 +233,8 @@ input:checked ~ .bubble::after {
 .date{
 	color: var(--grey);
 }
+
+.footer{
+	font-size: small;
+	
+}

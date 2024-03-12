@@ -102,5 +102,8 @@ onMounted(() => {
         </div>
       </div>
     </section>
+    <div class="footer">
+      *To update the ToDo click on the Todo you want to update
+    </div>
   </main>
 </template>
